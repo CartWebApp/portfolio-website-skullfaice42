@@ -1,0 +1,6 @@
+bg2.png → bg2.webp | Saved 740723 bytes (87.6%)
+Index-html.png → Index-html.webp | Saved 479485 bytes (85.2%)
+index-overlay.png → index-overlay.webp | Saved 262998 bytes (88.6%)
+me.jpg → me.webp | Saved 282880 bytes (75.5%)
+pixalated-me.png → pixalated-me.webp | Saved 229250 bytes (89.9%)
+world-map1.png → world-map1.webp | Saved 980093 bytes (88.5%)

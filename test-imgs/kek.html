@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Loader</title>
+    <style>
+        /* Basic styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('images/1.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-image 0.5s ease-in-out;
+        }
+        .loader {
+            position: absolute;
+            font-size: 2em;
+            color: white;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">Loading images...</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = ['1.png', '2.png', '3.png'];
+            const imagesFolder = 'images/';
+            let currentIndex = 0;
+            const preloadedImages = [];
+
+            // Preload all images in the background
+            function preloadImages(srcArray) {
+                srcArray.forEach(src => {
+                    const img = new Image();
+                    img.src = imagesFolder + src;
+                    preloadedImages.push(img);
+                });
+            }
+
+            // Function to change the background image on click
+            function changeBackground() {
+                currentIndex++;
+                if (currentIndex < images.length) {
+                    document.body.style.backgroundImage = `url('${imagesFolder + images[currentIndex]}')`;
+                }
+            }
+
+            // Preload the images
+            preloadImages(images);
+
+            // Hide the loader after images are preloaded
+            window.onload = function() {
+                document.querySelector('.loader').style.display = 'none';
+            }
+
+            // Event listener for clicks
+            document.body.addEventListener('click', changeBackground);
+        });
+    </script>
+</body>
+</html>

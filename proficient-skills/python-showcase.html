@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leet Converter</title>
+  <link rel="stylesheet" href="../css/main.css">
+
+  <style>
+    .going-back-button{
+      margin-left: 70vw;
+    }
+    .going-back-button button{
+      width: 30vw;
+    }
+
+
+
+    .background-image {
+      background-image: url(images/1-5.3.webp);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      gap: 4vw;
+      margin-bottom: 5vh;
+    }
+
+    textarea,
+    .output {
+      width: 30vw;
+      height: 30vh;
+      padding: 2vh;
+      font-size: 2vh;
+      background: #2a2a2a;
+      color: #00ff99;
+      border: 0.5vh solid #444;
+      resize: none;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #00ff99;
+    }
+
+    .output {
+      white-space: pre-wrap;
+      overflow-y: auto;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    
+
+    input[type="radio"] {
+      transform: scale(2); /* or use vw/vh size if you go custom */
+      accent-color: #00ff99; /* modern browsers only */
+    }
+  </style>
+</head>
+<body>
+  <div class="background-image"></div>
+
+  <div class="container">
+    <textarea id="input" placeholder="Type your text here..."></textarea>
+    <div class="output" id="output"></div>
+  </div>
+
+  <a href="wil.html">
+    <div class="wil">
+      <p>What I Learned</p>
+    </div>
+  </a>
+
+ 
+    <div class="going-back-button">
+      <a href="python.html">
+        <button>Go Back</button>
+      </a>
+    </div>
+
+
+
+  <script>
+    const replacements = {
+      A: ['A', 'a', '4', '@', '/\\', '^'],
+      B: ['B', 'b', '8', '|3', '13', '|:'],
+      C: ['C', 'c', '(', '{', '['],
+      D: ['D', 'd', '|)', '|>', '1)', '[)'],
+      E: ['E', 'e', '3'],
+      F: ['F', 'f', '|=', '|#'],
+      G: ['G', 'g', '6'],
+      H: ['H', 'h', '#', '[-]', '|-|'],
+      I: ['I', 'i', '1', '!', '|'],
+      J: ['J', 'j', '_|'],
+      K: ['K', 'k', '|<', '|{'],
+      L: ['L', 'l', '1', '|_', '|'],
+      M: ['M', 'm', '/\\/\\', '|v|'],
+      N: ['N', 'n', '/\\/', '|\\|', '^/'],
+      O: ['O', 'o', '0', '()', '{}', '[]'],
+      P: ['P', 'p', '|*', '|>'],
+      Q: ['Q', 'q', '9'],
+      R: ['R', 'r', '|2', '12'],
+      S: ['S', 's', '5', '$'],
+      T: ['T', 't', '7', '+'],
+      U: ['U', 'u', '|_|'],
+      V: ['V', 'v', '\\/'],
+      W: ['W', 'w', '\\/\\/', 'VV'],
+      X: ['X', 'x', '><'],
+      Y: ['Y', 'y', '`/'],
+      Z: ['Z', 'z', '2']
+    };
+
+    function getRandomLeet(char) {
+      const variants = replacements[char.toUpperCase()];
+      return variants ? variants[Math.floor(Math.random() * variants.length)] : char;
+    }
+
+    function generateRandomLeet(text) {
+      return text.split('').map(getRandomLeet).join('');
+    }
+
+    document.getElementById('input').addEventListener('input', (e) => {
+      const originalText = e.target.value;
+      const leetText = generateRandomLeet(originalText);
+      document.getElementById('output').textContent = leetText;
+    });
+  </script>
+</body>
+<script src="../js/subs.js"></script>
+<script src="../js/preloader.js"></script>
+</html>

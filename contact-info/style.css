@@ -1,0 +1,100 @@
+a{
+    color: black;
+    text-decoration: underline;
+}
+
+.three-containers{
+    margin-top: 4vh;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+}
+
+
+.one-container img{
+    height: 25vh;
+}
+.one-container p{
+    background-color: #F9D89F;
+    width: 20vw;
+    height: 13vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    font-size: 2vw;
+    font-family: 'Super Mario 256', sans-serif;
+}
+
+.see-more{
+    background-color: #F9D89F;
+    margin-left: 5vw;
+    margin-top: 2vh;
+    width: 10vw;
+    height: 7vh;
+    font-size: 1.75vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 1vw;
+    padding: 0 1vw;
+    font-family: 'Super Mario 256', sans-serif;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.links-me{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+.links-me .lower{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30vw;
+    background-color: #F9D89F;
+    height: 7vh;
+    border-radius: 1vw;
+    font-size: 2vw;
+}
+
+.flexing{
+    display: flex;
+}
+
+/* next button here */
+.next-level-button{
+    width: 55vw;
+    height: 7vh;
+    /* left: 50%; */
+}
+.next-level-button button:hover,
+.see-more:hover{
+    background-color: #FFC053;
+}
+
+
+/* for the fade in effect */
+
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.lower {
+    transition: opacity 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../index-overlay/style.css">
+<!-- <style>
+    .background-image{
+        background-image: url(images/1-1.1.webp);
+    }
+</style> -->
+<style>
+    a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+    <nav>
+        <div class="container-nav">
+            <img id="oneUpMushroom" src="../icon/one-up-mushroom.png" alt="One up mushroom">
+            <a href="../end-page.html" class="hidden"><p>Overview</p></a>
+            <a href="../index-overlay/why-game.html" class="hidden"><p>Why this game?</p></a>
+            <a href="" class="hidden"><p>Close</p></a>
+        </div>
+    </nav>
+    
+    <div class="background-image"></div>
+
+    
+
+    <a href="wil.html">
+        <div class="wil">
+            <p>What I learned</p>
+        </div>
+    </a>
+
+    <div class="title">
+        <h1>(1-1) <br> About Me</h1>
+    </div>
+
+    <div class="buttons">
+        <button id=buttonOne>Awards and Achievements</button>
+        <button id=buttonTwo>Hobbies</button>
+        <button id=buttonThree>Post-secondary <br> plan</button>
+    </div>
+
+    <div class="container">
+
+        <div id="textOne">I have consistently demonstrated academic excellence throughout my high school career. During
+            both my junior year (2023–2024) and senior year, I was honored with the Principal’s Honor Roll. In my
+            freshman and sophomore years, I maintained a GPA above 3.0, reflecting a strong and steady academic
+            performance. Currently, I hold the distinction of being the valedictorian at Fresno High School.</div>
+        <div id="textTwo">Outside of academics, I have a wide range of interests that reflect both creativity and
+            problem solving. I enjoy applying mathematical concepts—particularly formulas related to construction and
+            engineering—to practical tasks around the house, such as repairing fences or troubleshooting broken machines
+            using power tools. In my free time, I find origami to be a calming and meditative activity that also
+            sharpens my focus and precision. I'm also passionate about 3D modeling and printing, which allows me to
+            bring digital designs into the physical world. Additionally, I enjoy learning new skills and often use
+            Python programming to support and enhance my projects.</div>
+            
+        <div id="textThree">After graduating from high school, I plan to pursue a Bachelor's degree in Electrical
+            Engineering. My goal is to deepen my understanding of how systems work and to gain the skills necessary to
+            design and build technologies that simplify everyday life. I am driven by a desire to create solutions that
+            automate repetitive or tedious tasks, allowing people to focus more on the meaningful and enjoyable aspects
+            of life. Through continuous learning and innovation, I hope to contribute to a future where technology
+            enhances both productivity and personal well being.</div>
+    </div>
+
+
+    <div class="next-hub">
+
+        <div id="next" class="hidden">Next</div>
+
+        <a href="../world-map/html/forced-unclear0.html">
+            <div class="next-level">
+                Next Level
+                    
+            </div>
+        </a>
+
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    const texts = ["textOne", "textTwo", "textThree"];
+    let currentIndex = -1;
+
+    const textElements = texts.map(id => document.getElementById(id));
+    const container = document.querySelector(".container");
+    const nextBtn = document.getElementById("next");
+    const nextLevelBtn = document.querySelector(".next-level");
+
+    const buttonOne = document.getElementById("buttonOne");
+    const buttonTwo = document.getElementById("buttonTwo");
+    const buttonThree = document.getElementById("buttonThree");
+    const buttons = [buttonOne, buttonTwo, buttonThree];
+
+    function updateActiveButton(index) {
+    buttons.forEach((btn, i) => {
+        if (i === index) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    });
+}
+
+
+    function hideAllTexts() {
+        textElements.forEach(el => el.style.display = "none");
+    }
+
+    function showText(index) {
+        hideAllTexts();
+        container.style.display = "block";
+        textElements[index].style.display = "block";
+    }
+
+    function updateButtons() {
+        if (currentIndex < texts.length - 1) {
+            nextBtn.classList.remove("hidden");
+            nextLevelBtn.classList.add("hidden");
+        } else {
+            nextBtn.classList.add("hidden");
+            nextLevelBtn.classList.remove("hidden");
+        }
+    }
+
+    function goToText(index) {
+        currentIndex = index;
+        showText(index);
+        updateButtons();
+        updateActiveButton(index);
+        updateBackground(index); // <- add this
+    }
+
+
+
+    // Handle main buttons
+    buttonOne.onclick = () => goToText(0); // Awards → textOne
+    buttonTwo.onclick = () => goToText(1); // Hobbies → textTwo
+    buttonThree.onclick = () => goToText(2); // Post-secondary → textThree
+
+    // Handle "Next"
+    nextBtn.onclick = () => {
+        if (currentIndex < texts.length - 1) {
+            goToText(currentIndex + 1);
+        }
+    };
+
+    // Initial State
+    container.style.display = "none";
+    hideAllTexts();
+    nextBtn.classList.remove("hidden");
+    nextLevelBtn.classList.add("hidden");
+
+    updateActiveButton(-1); // no button is active initially
+
+
+
+</script>
+
+<script>
+
+function updateBackground(index) {
+    const bgDiv = document.querySelector(".background-image");
+    let bgUrl = "";
+
+    switch (index) {
+        case 0:
+            bgUrl = "images/1-1.2.webp"; // Replace with your image path
+            break;
+        case 1:
+            bgUrl = "images/1-1.3.webp";
+            break;
+        case 2:
+            bgUrl = "images/1-1.4.webp";
+            break;
+        default:
+            bgUrl = "";
+    }
+
+    bgDiv.style.backgroundImage = bgUrl ? `url('${bgUrl}')` : "none";
+}
+
+</script>
+
+<script src="../js/subs.js"></script>
+<script src="../js/preloader.js"></script>
+
+<!-- will use js to load everything based upon the button pressed -->

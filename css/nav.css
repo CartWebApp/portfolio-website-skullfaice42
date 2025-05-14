@@ -1,0 +1,41 @@
+
+nav{
+    /* position: fixed; */
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.container-nav{
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    margin-top: 5vh;
+    justify-content: space-between;
+}
+.container-nav img{
+    z-index: 1;
+    height: 10vh;
+}
+.container-nav a{
+    background-color: #F9D89F;
+    width: 15vw;
+    padding: 2%, 1%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 20vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hidden{
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.visible {
+    opacity: 1 !important; /* Ensure visibility */
+}
+
+.hidden, p{
+    font-size: 1.5vw;
+    
+}

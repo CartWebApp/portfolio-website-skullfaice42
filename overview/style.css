@@ -1,0 +1,98 @@
+.container{
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 auto; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    /* border: 2px solid black; */
+    gap: 10vh;
+}
+
+
+.group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.group:nth-child(2){
+    flex-direction: row-reverse;
+    /* background-color: black; */
+}
+.group img{
+    height: 40vh;
+    width: auto;
+}
+.group button{
+    background-color: #F9D89F;
+    border: none;
+    width: 20vw;
+    height: 7vh;
+    border-radius: 1vw;
+    color: white;
+    font-size: 1.5vw;
+
+    font-family: 'Super Mario 256', sans-serif;
+    -webkit-text-stroke: black 1px;
+    transition: all 0.3s ease-in-out;
+}
+.group button:hover{
+    background-color: #FFC053;
+}
+.next-button button{
+    margin-left: 40%;
+    width: 15vw;
+    height: 5vw;
+    
+}
+.next-button{
+
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3vw;
+    margin-right: 3vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* overlay on img text */
+
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    height: 40vh;
+    width: auto;
+}
+
+.image-wrapper img {
+    display: block;
+    height: 100%;
+    width: auto;
+    border-radius: 1vw;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 95%;
+    text-align: left;
+    padding: 1vh 1vw;
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 1vw 1vw;
+}
+
+.image-wrapper:hover .overlay-text {
+    opacity: 1;
+}
+

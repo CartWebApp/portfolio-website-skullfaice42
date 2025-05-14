@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        
+        .background-image{
+            background-image: url(images/Index-html.webp);
+        }
+
+        .area{
+            display: flex;
+        }
+        .dancin{
+            height: 100vh;
+        }
+
+        .right{
+            width: 40vw;
+            height: auto;
+            /* border: 2px solid green; */
+
+            position: absolute;
+            right: 0;
+        }
+        
+
+
+        .right ul{
+            background-color: #F9D89F;
+            padding: 1vw 1vw;
+            border-radius: 1vw;
+            display: flex;
+            flex-direction: column;
+            gap: 1vh;
+            width: 100%;
+            height: 50vh;
+
+            /* border: 2px solid green; */
+            /* margin-left: 30.5vw; */
+            
+        }
+        .right li{
+            color: black;
+            text-decoration: underline blue;
+            font-size: 1.5vw;
+            list-style: none;
+            transition: all 0.3s ease-in-out;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .right li:hover{
+            scale: .95;
+        }
+
+        .right .sub-heading{
+            font-size: 3vw;
+            background-color: #5CADFE;
+            padding: 1vw;
+            border-radius: 1vw;
+
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .danger{
+            background-color: black;
+            color: red;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            padding: 2vw;
+            border-radius: 1vw;
+            width: 95%;
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* margin: 0 auto; */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 2vw;
+            /* margin-top: 41vw; */
+            transition: all 0.3s ease-in-out;
+            /* margin-left: 30.5vw; */
+            /* margin-left: 14vw; */
+            /* border: 10px solid violet; */
+            /* position: absolute; */
+            /* right: 0; */
+        }
+        .danger:hover{
+            color: black;
+            background-color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    
+    <div class="area">
+        <img src="icon/mario-dancing.gif" alt="Dancing Mario" class="dancin">
+
+
+        <div class="right">
+
+            <div class="sub-heading">
+                <h2>Want to go back?</h2>
+            </div>
+
+            <ul>
+                <a href="about-me/about-me.html"><li>Level 1 (About Me)</li></a>
+                <a href="resume/resmue.html"><li>Level 2 (Resume)</li></a>
+                <a href="overview/portfolio-overview.html"><li>Level 3 (Portfolio Info)</li></a>
+                <a href="mushroom/mushrom.html"><li>Mushroom House</li></a>
+                <a href="contact-info/contact-info.html"><li>Level 4 (Contact Info)</li></a>
+                <a href="bulley/bully.html"><li>Bully (Character Traits I possess)</li></a>
+                <a href="proficient-skills/skills.html"><li>Level 5 (Proficient Skills)</li></a>
+                <a href="goals/goals.html"><li>Level 6 (Goals)</li></a>
+                <a href="castle/castle.html"><li>Castle (Simple Code)</li></a>
+
+            </ul>
+            <a href="index.html" class="danger">Back to begining</a>
+        </div>
+
+        
+    </div>
+    
+</body>
+<script src="js/main.js"></script>
+<script src="js/preloader.js"></script>
+</html>

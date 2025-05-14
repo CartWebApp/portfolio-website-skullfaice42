@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .background-image{
+            background-image: url(images/starting.webp);
+        }
+        .title{
+            width: 30vw;
+        }
+        .title h1{
+            font-size: 2.5vw;
+        }
+        .next-level-button{
+            margin-top: 70vh;
+        }
+
+        /* getting the differnet backgrounds working */
+
+        .frame-1 { background-image: url('images/cropped/starting.webp'); }
+        .frame-2 { background-image: url('images/cropped/1.webp'); }
+        .frame-3 { background-image: url('images/cropped/2.webp'); }
+        .frame-4 { background-image: url('images/cropped/3.webp'); }
+        .frame-5 { background-image: url('images/cropped/4.webp'); }
+        .frame-6 { background-image: url('images/cropped/5.webp'); }
+        .frame-7 { background-image: url('images/cropped/6.webp'); }
+        .frame-8 { background-image: url('images/cropped/7.webp'); }
+        .frame-9 { background-image: url('images/cropped/8.webp'); }
+            </style>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <div class="title">
+        <h1>(1-4) <br> Character Traits I <br> possess</h1>
+    </div>
+
+    <a href="wil.html">
+        <div class="wil"><p>What I learned</p></div>
+    </a>
+
+
+    <a href="../world-map/html/forced-unclear4.html">
+        <div class="next-level-button">
+            <button>Next Level</button>
+        </div>
+    </a>
+
+    
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const bg = document.querySelector(".background-image");
+        let currentFrame = 1;
+        const totalFrames = 9;
+        const frameDelay = 1500; // milliseconds between frames
+    
+        function showNextFrame() {
+            // Remove current frame class
+            bg.className = "background-image"; // reset
+    
+            // Add next frame class
+            bg.classList.add(`frame-${currentFrame}`);
+    
+            currentFrame++;
+            if (currentFrame <= totalFrames) {
+                setTimeout(showNextFrame, frameDelay);
+            }
+        }
+    
+        showNextFrame();
+    });
+    </script>
+    
+<script src="../js/subs.js"></script>
+<script src="../js/preloader.js"></script>
+</html>

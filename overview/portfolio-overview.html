@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="../index-overlay/style.css"> -->
+     <link rel="stylesheet" href="../css/nav.css">
+    <style>
+        .background-image{
+            background-image: url(images/3-1.1.webp);
+        }
+
+
+
+        @media (max-width: 768px) {
+    .overlay-text {
+        opacity: 1 !important;
+        position: relative;
+        background: rgba(0, 0, 0, 0.8);
+        margin-top: 1vh;
+        border-radius: 1vw;
+    }
+
+    .image-wrapper:hover .overlay-text {
+        opacity: 1;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <nav>
+        <div class="container-nav">
+            <img id="oneUpMushroom" src="../icon/one-up-mushroom.png" alt="One up mushroom">
+            <a href="../end-page.html" class="hidden"><p>Overview</p></a>
+            <a href="../index-overlay/why-game.html" class="hidden"><p>Why this game?</p></a>
+            <a href="" class="hidden"><p>Close</p></a>
+        </div>
+    </nav>
+
+    <div class="title">
+        <h1>(1-3) <br> Portfolio <br> Info</h1>
+    </div>
+
+    <a href="wil.html">
+        <div class="wil"><p>What I learned</p></div>
+    </a>
+
+
+    <div class="container"> <!--remember to use row reverse flex on this-->
+
+
+        <div class="group">
+            <button class="toggle-btn">Github</button>
+            <div class="image-wrapper toggle-img" style="display: none;">
+                <a href="https://github.com/skullfaice42"><img src="images/github.webp" alt="Image of github pfp"></a>
+                <div class="overlay-text">I was introduced to GitHub during my senior year of high school (2024–2025). There, I uploaded all the coding projects I worked on. As you can probably tell, I commit frequently when I’m working on large projects.</div>
+            </div>
+        </div>        
+        
+        
+        <div class="group">
+            <button class="toggle-btn">Learning Timeline</button>
+            <img class="toggle-img" src="images/timeline.webp" alt="Timeline" style="display: none;">
+        </div>
+        
+        <div class="group">
+            <button class="toggle-btn">Goals</button>
+            <div class="image-wrapper toggle-img" style="display: none;">
+                <img src="images/adrino.webp" alt="Adrino Uno">
+                <div class="overlay-text">I learned how to use an Arduino Uno during my junior year of high school (2024)—that’s where it all started.
+
+                    When I'm old and gray, I plan to already have machines that handle repetitive tasks for me. The machines I create will do all the work.</div>
+            </div>
+        </div>
+        
+        
+
+        
+
+    </div>
+    <a href="../world-map/html/forced-unclear2.html">
+        <div class="next-button">
+            <button>Next Level</button>
+        </div>
+    </a>
+</body>
+
+<script>
+    const buttons = document.querySelectorAll('.toggle-btn');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const imgWrapper = button.nextElementSibling;
+            if (imgWrapper.style.display === 'none' || imgWrapper.style.display === '') {
+                imgWrapper.style.display = 'inline-block';
+            } else {
+                imgWrapper.style.display = 'none';
+            }
+        });
+    });
+</script>
+<script src="../js/subs.js"></script>
+<script src="../js/preloader.js"></script>
+
+
+</html>

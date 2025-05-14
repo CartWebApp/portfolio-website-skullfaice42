@@ -1,0 +1,4 @@
+2-1.1.png → 2-1.1.webp | Saved 215779 bytes (74.2%)
+icons\location.png → location.webp | Saved 4375 bytes (77.2%)
+icons\mail.png → mail.webp | Saved 3572 bytes (71.8%)
+icons\phone.png → phone.webp | Saved 2519 bytes (66.7%)

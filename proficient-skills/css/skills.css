@@ -1,0 +1,63 @@
+.title{
+    width: 60vw;
+}
+
+.toggle{
+    background-color: grey;
+    border: 2px solid black;
+    height: 10vh;
+    aspect-ratio: 1/1;
+    border-radius: 20vw;
+    margin: 1vw 0 1vw 4vw;
+    transition: all 0.3s ease-in-out;
+}
+.toggle:hover{
+    background-color: rgb(94, 92, 92);
+}
+
+.showcase .pair{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+
+    margin-left: 4vw;
+    align-items: center;
+}
+
+.pair a:nth-child(1){
+    margin-left: 10vw;
+    background-color: #F9D89F;
+    height: 7vh;
+    width: 10vw;
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    font-size: 1vw;
+}
+
+.pair img{
+    width: 10.7vw;
+}
+.pair a:nth-child(2){
+    /* height: 10vh; */
+}
+
+
+/* where the cool magic happens */
+
+.vs-title, .vs-img, .py-title, .py-img, .fusion-title, .fusion-img {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.visible {
+    opacity: 1;
+}
+
+.toggle.active {
+    background-color: #555;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+

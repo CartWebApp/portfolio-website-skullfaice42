@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <style>
+        .background-image {
+            background-image: url(images/1-6.1.webp);
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .heading {
+            margin-top: 3vh;
+            background-color: #F9D89F;
+            width: 30vw;
+            height: 7vh;
+            border-radius: 1vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: opacity 0.5s ease;
+            font-size: 1.25vw;
+        }
+
+        .text {
+            margin: 5vh;
+            width: 50vw;
+            background-color: #F9D89F;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 1vw;
+            padding: 1vw;
+            transition: height 0.3s ease;
+        }
+
+        .text p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5vw;
+        }
+
+        .next-button {
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-image"></div>
+
+    <nav>
+        <div class="container-nav">
+            <img id="oneUpMushroom" src="../icon/one-up-mushroom.png" alt="One up mushroom">
+            <a href="../end-page.html" class="hidden"><p>Overview</p></a>
+            <a href="../index-overlay/why-game.html" class="hidden"><p>Why this game?</p></a>
+            <a href="" class="hidden"><p>Close</p></a>
+        </div>
+    </nav>
+
+
+    <div class="title">
+        <h1>(1-6) Goals</h1>
+    </div>
+
+    <a href="wil.html">
+        <div class="wil">
+            <p>What I learned</p>
+        </div>
+    </a>
+
+    <div class="heading" id="heading">
+        <!-- Heading text will be updated by JS -->
+    </div>
+
+    <div class="text" id="textBox">
+        <p id="textContent">
+            I have 3 main goals I want to eventually accomplish. 1. I would like to become an electrical engineer. 2. I would
+            like to be able to fully understand GitHub. 3. Get a 3D printing business.
+        </p>
+    </div>
+
+    <div class="next-button">
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        const heading = document.getElementById("heading");
+        const textContent = document.getElementById("textContent");
+        const textBox = document.getElementById("textBox");
+        const nextBtn = document.getElementById("nextBtn");
+    
+        const steps = [
+            {
+                headingVisible: false,
+                headingText: "",
+                bodyText: `I have 3 main goals I want to eventually accomplish. 1. I would like to become an electrical engineer. 2. I would
+                    like to be able to fully understand GitHub. 3. Get a 3D printing business.`,
+                height: "20vh"
+            },
+            {
+                headingVisible: true,
+                headingText: "1. Electrical Engineer",
+                bodyText: `I want to be an electrical engineer because I enjoy working with things that make life easier. The way the world is heading, it seems like becoming an electrical engineer would keep me up to date with all the latest tech-related products and machinery—especially since I’d be the one helping to create them.`,
+                height: "45vh"
+            },
+            {
+                headingVisible: true,
+                headingText: "2. Learn GitHub",
+                bodyText: `GitHub is a powerful platform where people from all over the world can showcase what they've created. There are thousands of useful programs that can help everyday people like myself. If I can master it, there's no telling what I might discover—or what I might create.`,
+                height: "45vh"
+            },
+            {
+                headingVisible: true,
+                headingText: "3. 3D Print Business",
+                bodyText: `I have owned a 3D printer for 2 years now and I've learned so much about it—enough that I believe I can start to make money from it one day. I can accomplish this with relative ease once I can get my marketing and motivation up and running.`,
+                height: "45vh"
+            }
+        ];
+    
+        let currentStep = 0;
+    
+        function updateStep() {
+            const step = steps[currentStep];
+    
+            heading.style.opacity = step.headingVisible ? "1" : "0";
+            heading.textContent = step.headingText;
+            textContent.textContent = step.bodyText;
+            textBox.style.height = step.height;
+    
+            // Update button text if it's the last step
+            if (currentStep === steps.length - 1) {
+                nextBtn.textContent = "Next Level";
+            }
+        }
+    
+        nextBtn.addEventListener("click", () => {
+            if (currentStep === steps.length - 1) {
+                // Redirect to index.html on final step
+                window.location.href = "../world-map/html/forced-unclear6.html";
+            } else {
+                currentStep++;
+                updateStep();
+            }
+        });
+    
+        // Initial setup
+        heading.style.opacity = "0";
+        textBox.style.height = steps[0].height;
+    </script>
+</body>
+<script src="../js/subs.js"></script>
+<script src="../js/preloader.js"></script>
+
+</html>

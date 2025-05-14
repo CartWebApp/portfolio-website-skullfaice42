@@ -1,0 +1,37 @@
+Hey! remember you need to have the 'WIL', and the nav bars on just about every page
+
+
+now that i think about it... i really dont want to keep adding the code for wil. so ill just add it in js for every page because why not, then ill change... but wait thats too much thinkin... ugh
+
+
+for now im completely skipping the home world just because i know that will be a HUGE learning curve for me
+
+
+
+
+
+
+todo (updated 4/20/25)
+
+deploy the js file to EVERY SINGLE FILE... get the nav running on all of them... if not then... gg's change the
+
+needs the updated backgorund images for the bully (ontop of bully and leaving) put it on the little dot above the spaid
+
+images on map from muchroom are scuffed (sopposde to be leaving mushroom, landign on 4)
+
+
+extra stuff
+	make sure to properelly crop the images ot where you can see everything... not crappy
+
+	make sure mobiel can see it as well and tablet (if it looks scuffed... on mobile, add a disclamer to rotate your phone)
+
+
+//use whats below for the nav
+<nav>
+            <div class="container-nav">
+                <img id="oneUpMushroom" src="../icon/one-up-mushroom.png" alt="One up mushroom">
+                <a href="../world-map/html/world-map-loading.html" class="hidden"><p>Who Am I?</p></a>
+                <a href="why-game.html" class="hidden"><p>Why this game?</p></a>
+                <a href="" class="hidden"><p>Close</p></a>
+            </div>
+        </nav>

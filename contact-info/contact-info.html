@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <style>
+        .background-image{
+            background-image: url(images/1-4.1.webp);
+        }
+        .next-level-button button{
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <nav>
+        <div class="container-nav">
+            <img id="oneUpMushroom" src="../icon/one-up-mushroom.png" alt="One up mushroom">
+            <a href="../end-page.html" class="hidden"><p>Overview</p></a>
+            <a href="../index-overlay/why-game.html" class="hidden"><p>Why this game?</p></a>
+            <a href="" class="hidden"><p>Close</p></a>
+        </div>
+    </nav>
+
+    <div class="title">
+        <h1>(1-4) Contact Info</h1>
+    </div>
+    <a href="wil.html">
+        <div class="wil"><p>What I Learned</p></div>
+    </a>
+
+    <div class="three-containers">
+
+        <div class="one-container">
+            <img src="images/headshot-of-me.webp" alt="Headshot of me">
+        </div>
+
+        <div class="one-container"><p>Jeremy Kirk</p></div>
+
+        <div class="one-container"><p>Web Developer</p></div>
+    </div>
+
+    <div class="see-more">See More</div>
+    
+    <div class="flexing">
+
+        <div class="links-me">
+            <a href="mailto:jeremy.kirk24@student.cart.org" class="lower email hidden">jeremy.kirk24@student.cart.org</a>
+            <div class="lower lkn hidden">
+                <a href="https://www.linkedin.com/in/original-mango-kirk-4a1517310/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        
+            <div class="next-level-button">
+                <a href="../world-map/html/forced-unclear3.html">
+                    <button>Next Level</button>
+                </a>
+            </div>
+        
+
+    </div>
+
+
+
+    
+
+</body>
+
+<script>
+    document.querySelector('.see-more').addEventListener('click', () => {
+        const items = document.querySelectorAll('.links-me .lower');
+        const isVisible = items[0].classList.contains('show'); // Check if any item is visible
+
+        if (isVisible) {
+            // Fade out and hide
+            items.forEach((item) => {
+                item.classList.remove('show');
+                item.classList.add('hidden');
+            });
+        } else {
+            // Fade in one at a time
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.remove('hidden');
+                    item.classList.add('show');
+                }, index * 500); // Stagger the fade-in
+            });
+        }
+    });
+</script>
+
+<script src="../js/subs.js"></script>
+<script src="../js/preloader.js"></script>
+
+
+
+</html>

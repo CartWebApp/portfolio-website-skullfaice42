@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visual Display Switcher</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .background-image {
+      background-image: url(images/c-1.webp);
+    }
+    body {
+      margin: 0;
+      background: #111;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .selector {
+      margin-top: 2vh;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .selector button {
+      background-color: gray;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .selector button:hover {
+      background-color: black;
+    }
+
+    #right-display {
+      width: 80vw;
+      height: 60vh;
+      margin-top: 3vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #444;
+      background: #222;
+      position: relative;
+    }
+
+    .clock {
+      color: white;
+      font-size: 3em;
+      padding: 20px 40px;
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cube {
+      position: relative;
+      width: 100px;
+      transform-style: preserve-3d;
+      animation: spin 5s linear infinite;
+    }
+
+    .face {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(0,255,255,0.1);
+      border: 1px solid #0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .front  { transform: translateZ(50px); }
+    .back   { transform: rotateY(180deg) translateZ(50px); }
+    .right  { transform: rotateY(90deg) translateZ(50px); }
+    .left   { transform: rotateY(-90deg) translateZ(50px); }
+    .top    { transform: rotateX(90deg) translateZ(50px); }
+    .bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+    @keyframes spin {
+      0% { transform: rotateX(0) rotateY(0); }
+      100% { transform: rotateX(360deg) rotateY(360deg); }
+    }
+  </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="title">
+        <h1>(1-🏰) Simple Code</h1>
+      </div>
+      <a href="wil.html">
+        <div class="wil">
+          <p>What I learned</p>
+        </div>
+      </a>
+
+  
+
+  <div id="right-display"></div>
+
+  <div class="selector">
+    <button id="btn1"></button>
+    <button id="btn2"></button>
+    <button id="btn3"></button>
+  </div>
+
+  <a href="../end-page.html">
+    <div class="next-level-button">
+      <button>Next</button>
+    </div>
+  </a>
+<script>
+  const rightDisplay = document.getElementById('right-display');
+
+  const displays = [
+    // Button 1: Clock
+    `<div class="clock" id="clock">--:--:--</div>`,
+
+    // Button 2: Cube
+    `<div class="cube">
+       <div class="face front"></div>
+       <div class="face back"></div>
+       <div class="face right"></div>
+       <div class="face left"></div>
+       <div class="face top"></div>
+       <div class="face bottom"></div>
+     </div>`,
+
+    // Button 3: Animated gradient
+    `<div class="animated-gradient" style="
+      width: 100%; height: 100%;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;">
+    </div>`
+  ];
+
+  // Inject keyframes for gradient animation (if not already present)
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  document.getElementById('btn1').onclick = () => {
+    rightDisplay.innerHTML = displays[0];
+    const clock = document.getElementById('clock');
+    setInterval(() => {
+      if (clock) clock.textContent = new Date().toLocaleTimeString();
+    }, 1000);
+  };
+
+  document.getElementById('btn2').onclick = () => {
+    rightDisplay.innerHTML = displays[1];
+  };
+
+  document.getElementById('btn3').onclick = () => {
+    rightDisplay.innerHTML = displays[2];
+  };
+</script>
+
+<script src="../js/preloader.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+    <style>
+        .background-image{
+            background-image: url(images/1-5.1.webp);
+        }
+        .pair a:hover{
+            /* border: 2px solid black; */
+            scale: .95;
+            transition: all .25s ease-in-out;
+        }
+    </style>
+
+    <div class="background-image"></div>
+
+    <nav>
+        <div class="container-nav">
+            <img id="oneUpMushroom" src="../icon/one-up-mushroom.png" alt="One up mushroom">
+            <a href="../end-page.html" class="hidden"><p>Overview</p></a>
+            <a href="../index-overlay/why-game.html" class="hidden"><p>Why this game?</p></a>
+            <a href="" class="hidden"><p>Close</p></a>
+        </div>
+    </nav>
+
+    <div class="title">
+        <h1>(1-5) Proficient Skills</h1>
+    </div>
+
+    <a href="wil.html">
+        <div class="wil"><p>What I learned</p></div>
+    </a>
+    
+    <div class="toggle"></div>
+
+
+
+
+    
+
+    <div class="showcase">
+        
+        <div class="pair">
+            <a class="vs-title" href="vs-code.html"><h2>VS Code</h2></a>
+            <a class="vs-img" href="vs-code.html"><img src="images/vs-code.webp" alt="VS Code"></a>
+        </div>
+        
+        <div class="pair">
+            <a class="py-title" href="python.html"><h2>Python</h2></a>
+            <a class="py-img" href="python.html"><img src="images/python.webp" alt="Python"></a>
+        </div>
+        
+        <div class="pair">
+            <a class="fusion-title" href="fusion.html"><h2>Fusion 360</h2></a>
+            <a class="fusion-img" href="fusion.html"><img src="images/fusion.webp" alt="Fusion 360"></a>
+        </div>
+        
+
+
+    </div>
+
+    <a href="../world-map/html/forced-unclear5.html">
+        <div class="next-level-button">
+            <button>Next level</button>
+        </div>
+    </a>
+    
+</body>
+
+<script>
+    const toggle = document.querySelector('.toggle');
+    let isVisible = false;
+
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        isVisible = !isVisible;
+
+        if (isVisible) {
+            setTimeout(() => {
+                document.querySelector('.vs-title').classList.add('visible');
+            }, 0);
+
+            setTimeout(() => {
+                document.querySelector('.vs-img').classList.add('visible');
+                document.querySelector('.py-title').classList.add('visible');
+            }, 1000);
+
+            setTimeout(() => {
+                document.querySelector('.py-img').classList.add('visible');
+                document.querySelector('.fusion-title').classList.add('visible');
+            }, 2000);
+
+            setTimeout(() => {
+                document.querySelector('.fusion-img').classList.add('visible');
+            }, 3000);
+        } else {
+            // Instantly hide everything
+            document.querySelector('.vs-title').classList.remove('visible');
+            document.querySelector('.vs-img').classList.remove('visible');
+            document.querySelector('.py-title').classList.remove('visible');
+            document.querySelector('.py-img').classList.remove('visible');
+            document.querySelector('.fusion-title').classList.remove('visible');
+            document.querySelector('.fusion-img').classList.remove('visible');
+        }
+    });
+</script>
+<script src="../js/subs.js"></script>
+<script src="../js/preloader.js"></script>
+
+</html>

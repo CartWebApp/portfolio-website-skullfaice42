@@ -1,0 +1,22 @@
+.resmue-butns{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.resmue-butns button{
+    background-color: #F9D89F;
+    border: none;
+    width: 30vw;
+    height: 7vh;
+    border-radius: 1vw;
+
+    font-family: 'Super Mario 256', sans-serif;
+    transition: all 0.3s ease;
+    font-size: 2vw;
+}
+
+.resmue-butns button:hover{
+    background-color: #FFC053;
+}

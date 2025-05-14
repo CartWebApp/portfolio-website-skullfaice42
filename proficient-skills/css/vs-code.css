@@ -1,0 +1,82 @@
+.section{
+    margin-top: 5vh;
+}
+.title h1{
+    color: black;
+}
+
+.two{
+    display: flex;
+}
+
+
+.small-container{
+    background-color: #F9D89F;
+    height: 20vh;
+    width: 40vw;
+    border-radius: 2vw;
+    padding: 1vw;
+}
+.small-container p{
+    font-size: 1.5vw;
+}
+.two{
+    /* justify-content: center; */
+    display: flex;
+    gap: 10vw;
+}
+.two img{
+    width: 15vw;
+}
+.two:nth-child(1){
+    margin-left: 10vw;
+}
+
+
+.two:nth-child(2){
+    position: absolute;
+    bottom: 4%;
+    right: 10%;
+    flex-direction: row-reverse;
+}
+
+
+
+.next-button{ /*you know what... it is what it is... whattever*/
+    position: absolute;
+    right: 0;
+    bottom: 5%;
+}
+
+/* for the python page */
+
+.container{
+    margin-top: 10vh;
+    display: flex;
+    /* width: 70vw; */
+    justify-content: center;
+    /* margin: 0 auto; */
+    gap: 10vw;
+}
+.container img{
+    width: 30vw;
+    height: auto;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 7vh;
+}
+.text .single{
+    background-color: #F9D89F;
+    padding: 1vw;
+    border-radius: 2vw;
+    width: 40vw;
+    height: 25vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.single p{
+    font-size: 1.5vw;
+}
+
+/* fusion.html below */

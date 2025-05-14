@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Super Mario 256';
+    src: url('fonts/SuperMario256.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+/* font-family: 'Super Mario 256', sans-serif; */
+
+@font-face {
+    font-family: 'Pixel NES';
+    src: url('fonts/PixelNES.otf') format('truetype');
+  }
+  /* font-family: 'Pixel NES', sans-serif; */
+
+
+/* font-family: Arial, Helvetica, sans-serif; */
+/* ^for the text that i cant import */

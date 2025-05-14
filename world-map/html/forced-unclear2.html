@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jeremy's Portfolio</title>
+  <link rel="stylesheet" href="index-overlay/style.css"/>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-image" id="bg"></div>
+  <script>
+    const backgrounds = [
+      'url(../images/uncleared/4.webp)',
+      'url(../images/uncleared/5.webp)'
+    ];
+
+    let clickCount = 0;
+    const bgDiv = document.getElementById('bg');
+
+    bgDiv.style.backgroundImage = backgrounds[clickCount];
+
+    document.addEventListener('click', () => {
+      clickCount++;
+
+      if (clickCount < backgrounds.length) {
+        bgDiv.style.backgroundImage = backgrounds[clickCount];
+      } else if (clickCount === backgrounds.length) {
+        // Fourth click: redirect
+        window.location.href = '../../mushroom/mushrom.html';
+      }
+    });
+  </script>
+  <script src="../../js/subs2.js"></script>
+  <script src="../../js/preloader.js"></script>
+</body>
+</html>

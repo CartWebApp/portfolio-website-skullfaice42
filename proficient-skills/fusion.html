@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="css/vs-code.css" />
+  <style>
+    .background-image {
+      background-image: url(images/1-5.4.webp);
+    }
+
+    .title h1 {
+      color: black;
+    }
+
+    .carousel-container {
+      width: 40vw;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+        position: relative;
+        min-width: 100%;
+        cursor: pointer;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .carousel-item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 1.5rem;
+        border-radius: 0.5rem;
+    }
+    .overlay {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .carousel-item:hover .overlay {
+        opacity: 1;
+    }
+
+    .carousel-buttons {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+
+    .carousel-buttons button {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .cara-split {
+      display: flex;
+    }
+
+    .cara-split .right {
+      width: 30vw;
+      background-color: #F9D89F;
+      height: 30vh;
+      padding: 1vw;
+      border-radius: 1vw;
+      margin-left: 5vw;
+      margin-top: 10vh;
+    }
+
+
+
+    .title h1 {
+    color: black;
+  }
+
+  .carousel-container {
+    margin-top: 3vh;
+    width: 30vw;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item {
+      position: relative;
+      min-width: 100%;
+      cursor: pointer;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .carousel-item .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Now only 80% of image width */
+    height: auto; /* Allow height to fit content */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 1.5vw;
+    border-radius: 0.5rem;
+    padding: 1vw; /* Adds space around the text */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+  .overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .carousel-item:hover .overlay {
+      opacity: 1;
+  }
+
+  .carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  .carousel-buttons button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 2vw;
+    cursor: pointer;
+  }
+
+  .cara-split {
+    display: flex;
+  }
+
+  .cara-split .right {
+    width: 30vw;
+    background-color: #F9D89F;
+    height: 30vh;
+    padding: 1vw;
+    border-radius: 1vw;
+    margin-left: 5vw;
+    margin-top: 10vh;
+  }
+  .right p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 1.25vw;
+  }
+
+  .going-back-button{
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+
+  }
+
+  .carousel-container{
+    background-color: rgba(128, 128, 128, 0.838);
+  }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="background-image"></div>
+
+  <div class="title">
+    <h1>Fusion 360</h1>
+  </div>
+
+  <a href="wil.html">
+    <div class="wil">
+      <p>What I Learned</p>
+    </div>
+  </a>
+
+  <section class="cara-split">
+    <div class="carousel-container">
+      <div class="carousel" id="carousel">
+        <!-- 9 images -->
+        <div class="carousel-item"><img src="images/carousel/1.webp" alt="1"><div class="overlay">My gamertag closely resembles a skull, and I wanted to show it off. Thanks to the EMR (Engineering, Manufacturing, and Robotics) lab at CART, I was able to model this in Fusion 360.</div></div>
+        <div class="carousel-item"><img src="images/carousel/2.webp" alt="2"><div class="overlay">One of my neighbors likes squirrels so I ended up making her an acorn. Later I made her a 2d Squirrel.</div></div>
+        <div class="carousel-item"><img src="images/carousel/3.webp" alt="3"><div class="overlay">In the EMR lab at CART, we had these little ‘candy canes’. These candy canes are called Freedom Tags. If you wanted to listen to music as you worked, you had to go to the back of the class and request one of these freedom tags. The ones we were given were solid colors such as Blue, Green, or Red. I took the name ‘Freedom’ to a whole new level and made one that closely resembles the American flag.
+        </div></div>
+        <div class="carousel-item"><img src="images/carousel/4.webp" alt="4"><div class="overlay">My mom likes hummingbirds so I found a reference image of a drawing, then traced over it. When I was at the end of the build, I realized that there was already a model of the hummingbird out there. I took inspiration from that as well and came up with this.</div></div>
+        <div class="carousel-item"><img src="images/carousel/5.webp" alt="5"><div class="overlay">This is the squirrel I talked about earlier.</div></div>
+        <div class="carousel-item"><img src="images/carousel/6.webp" alt="6"><div class="overlay">Back to things related to Freedom, this is a Freedom Ring. It’s self-explanatory. It’s a ring that has the words ‘Freedom’ written on it.
+        </div></div>
+        <div class="carousel-item"><img src="images/carousel/7.webp" alt="7"><div class="overlay">I took the dimensions from one of EMR’s Freedom Tags and upscaled it to be 6 inches instead of the regular inch ones they would give us.
+        </div></div>
+        <div class="carousel-item"><img src="images/carousel/8.webp" alt="8"><div class="overlay">Yet another Freedom ring. This time, it has the little freedom symbols on it.
+        </div></div>
+        <div class="carousel-item"><img src="images/carousel/9.webp" alt="9"><div class="overlay">I call this Mr. Freedom. He is created using nothing but freedom tags. It took a few months to create the hub because I had to learn how to first create the Freedom tag, then how to color each component, and finally, how to move and attach things to one another.
+        </div></div>
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="moveSlide(-1)">❮</button>
+        <button onclick="moveSlide(1)">❯</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <p>Fusion 360 is a 3D modeling software I learned to use in my junior year (2023–24). I got really good at it and created several projects, including a rocket, an airplane, a Freedom Tag (a small colored candy cane we had to use in the lab to do specific things), a person made out of Freedom Tags, and even a giant Freedom Tag on top of that. It was really fun learning about 3D modeling!</p>
+    </div>
+  </section>
+
+  <div class="going-back-button">
+    <a href="skills.html">
+      <button>Go Back</button>
+    </a>
+
+  <script>
+    let currentIndex = 0;
+    const carousel = document.getElementById('carousel');
+    const totalItems = carousel.children.length;
+
+    function moveSlide(direction) {
+      currentIndex += direction;
+
+      if (currentIndex < 0) currentIndex = totalItems - 1;
+      if (currentIndex >= totalItems) currentIndex = 0;
+
+      const offset = -currentIndex * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+    }
+  </script>
+</body>
+<script src="../js/subs.js"></script>
+<script src="../js/preloader.js"></script>
+</html>
